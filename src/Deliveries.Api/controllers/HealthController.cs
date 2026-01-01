@@ -1,8 +1,8 @@
-// deliveries.Api/Controllers/HealthController.cs
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
+using Swashbuckle.AspNetCore.Annotations;
 
-namespace deliveries.Api.Controllers;
+namespace Deliveries.Api.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
