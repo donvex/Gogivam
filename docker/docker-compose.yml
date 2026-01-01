@@ -1,1 +1,14 @@
-# docker-compose backend
+version: '3.8'
+
+services:
+  deliveries-api:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    ports:
+      - "5000:5000"
+      - "5001:5001"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:5000
+    container_name: deliveries-api
