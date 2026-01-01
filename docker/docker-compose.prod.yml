@@ -1,0 +1,27 @@
+# Production docker-compose override
+version: '3.8'
+
+services:
+  deliveries-postgres:
+    restart: always
+    environment:
+      POSTGRES_DB: deliveries_db
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-admin}
+    volumes:
+      - postgres_data_prod:/var/lib/postgresql/data
+
+  deliveries-api:
+    restart: always
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - ASPNETCORE_URLS=http://+:8080
+      - ConnectionStrings__DefaultConnection=Host=deliveries-postgres;Database=deliveries_db;Username=admin;Password=${POSTGRES_PASSWORD:-admin};
+      - Logging__LogLevel__Default=Warning
+      - Logging__LogLevel__Microsoft.EntityFrameworkCore=Error
+    volumes:
+      - ./logs:/app/logs:rw
+
+volumes:
+  postgres_data_prod:
+    driver: local
