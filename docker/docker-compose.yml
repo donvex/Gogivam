@@ -1,12 +1,86 @@
 # docker-compose.yml
 
+version: '3.8'
+
 services:
+  # PostgreSQL Database
+  deliveries-postgres:
+    image: postgres:15-alpine
+    container_name: deliveries-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: deliveries_db
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+      PGDATA: /var/lib/postgresql/data/pgdata
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./postgres/init:/docker-entrypoint-initdb.d
+    networks:
+      - deliveries-network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U admin -d deliveries_db"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Deliveries API
   deliveries-api:
     build:
       context: ..
       dockerfile: docker/Dockerfile
     container_name: deliveries-api
+    restart: unless-stopped
     ports:
       - "5000:8080"
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:8080
+      - ConnectionStrings__DefaultConnection=Host=deliveries-postgres;Database=deliveries_db;Username=admin;Password=admin;
+      - Logging__LogLevel__Default=Information
+      - Logging__LogLevel__Microsoft.EntityFrameworkCore=Warning
+    depends_on:
+      deliveries-postgres:
+        condition: service_healthy
+    networks:
+      - deliveries-network
+    volumes:
+      - ./logs:/app/logs
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/health"]
+      interval: 30s
+      timeout: 10s
+      start_period: 30s
+      retries: 3
+
+  # pgAdmin (Optional - for database management)
+  deliveries-pgadmin:
+    image: dpage/pgadmin4:latest
+    container_name: deliveries-pgadmin
+    restart: unless-stopped
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+      PGADMIN_LISTEN_PORT: 80
+    ports:
+      - "8080:80"
+    volumes:
+      - pgadmin_data:/var/lib/pgadmin
+    networks:
+      - deliveries-network
+    depends_on:
+      - deliveries-postgres
+    profiles:
+      - tools
+
+volumes:
+  postgres_data:
+    driver: local
+  pgadmin_data:
+    driver: local
+
+networks:
+  deliveries-network:
+    driver: bridge
