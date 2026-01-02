@@ -1,0 +1,12 @@
+/src/src/Deliveries.Domain/bin/Debug/net8.0/Deliveries.Domain.deps.json
+/src/src/Deliveries.Domain/bin/Debug/net8.0/Deliveries.Domain.dll
+/src/src/Deliveries.Domain/bin/Debug/net8.0/Deliveries.Domain.pdb
+/src/src/Deliveries.Domain/obj/Debug/net8.0/Deliveries.Domain.GeneratedMSBuildEditorConfig.editorconfig
+/src/src/Deliveries.Domain/obj/Debug/net8.0/Deliveries.Domain.AssemblyInfoInputs.cache
+/src/src/Deliveries.Domain/obj/Debug/net8.0/Deliveries.Domain.AssemblyInfo.cs
+/src/src/Deliveries.Domain/obj/Debug/net8.0/Deliveries.Domain.csproj.CoreCompileInputs.cache
+/src/src/Deliveries.Domain/obj/Debug/net8.0/Deliveries.Domain.sourcelink.json
+/src/src/Deliveries.Domain/obj/Debug/net8.0/Deliveries.Domain.dll
+/src/src/Deliveries.Domain/obj/Debug/net8.0/refint/Deliveries.Domain.dll
+/src/src/Deliveries.Domain/obj/Debug/net8.0/Deliveries.Domain.pdb
+/src/src/Deliveries.Domain/obj/Debug/net8.0/ref/Deliveries.Domain.dll
