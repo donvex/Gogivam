@@ -5,7 +5,7 @@ WORKDIR /src
 # Copy solution file
 COPY ["Deliveries.sln", "."]
 
-# Copy all project files for dependency restoration
+# Copy all project files for dependency restoration data
 COPY ["src/Deliveries.Api/Deliveries.Api.csproj", "src/Deliveries.Api/"]
 COPY ["src/Deliveries.Application/Deliveries.Application.csproj", "src/Deliveries.Application/"]
 COPY ["src/Deliveries.Domain/Deliveries.Domain.csproj", "src/Deliveries.Domain/"]
