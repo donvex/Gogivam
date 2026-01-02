@@ -1,0 +1,7 @@
+/src/tests/Unit/bin/Debug/net8.0/CoverletSourceRootsMapping_Deliveries.Unit.Tests
+/src/tests/Unit/obj/Debug/net8.0/Deliveries.Unit.Tests.csproj.AssemblyReference.cache
+/src/tests/Unit/obj/Debug/net8.0/Deliveries.Unit.Tests.GeneratedMSBuildEditorConfig.editorconfig
+/src/tests/Unit/obj/Debug/net8.0/Deliveries.Unit.Tests.AssemblyInfoInputs.cache
+/src/tests/Unit/obj/Debug/net8.0/Deliveries.Unit.Tests.AssemblyInfo.cs
+/src/tests/Unit/obj/Debug/net8.0/Deliveries.Unit.Tests.csproj.CoreCompileInputs.cache
+/src/tests/Unit/obj/Debug/net8.0/Deliveries.Unit.Tests.sourcelink.json

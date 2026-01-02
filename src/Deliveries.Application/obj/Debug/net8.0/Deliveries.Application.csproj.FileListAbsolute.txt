@@ -1,0 +1,16 @@
+/src/src/Deliveries.Application/bin/Debug/net8.0/Deliveries.Application.deps.json
+/src/src/Deliveries.Application/bin/Debug/net8.0/Deliveries.Application.dll
+/src/src/Deliveries.Application/bin/Debug/net8.0/Deliveries.Application.pdb
+/src/src/Deliveries.Application/bin/Debug/net8.0/Deliveries.Domain.dll
+/src/src/Deliveries.Application/bin/Debug/net8.0/Deliveries.Domain.pdb
+/src/src/Deliveries.Application/obj/Debug/net8.0/Deliveries.Application.csproj.AssemblyReference.cache
+/src/src/Deliveries.Application/obj/Debug/net8.0/Deliveries.Application.GeneratedMSBuildEditorConfig.editorconfig
+/src/src/Deliveries.Application/obj/Debug/net8.0/Deliveries.Application.AssemblyInfoInputs.cache
+/src/src/Deliveries.Application/obj/Debug/net8.0/Deliveries.Application.AssemblyInfo.cs
+/src/src/Deliveries.Application/obj/Debug/net8.0/Deliveries.Application.csproj.CoreCompileInputs.cache
+/src/src/Deliveries.Application/obj/Debug/net8.0/Deliveries.Application.sourcelink.json
+/src/src/Deliveries.Application/obj/Debug/net8.0/Deliveri.8DC36A3F.Up2Date
+/src/src/Deliveries.Application/obj/Debug/net8.0/Deliveries.Application.dll
+/src/src/Deliveries.Application/obj/Debug/net8.0/refint/Deliveries.Application.dll
+/src/src/Deliveries.Application/obj/Debug/net8.0/Deliveries.Application.pdb
+/src/src/Deliveries.Application/obj/Debug/net8.0/ref/Deliveries.Application.dll
