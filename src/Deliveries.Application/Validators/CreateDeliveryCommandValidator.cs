@@ -1,6 +1,7 @@
 using FluentValidation;
 using Deliveries.Application.Commands.Deliveries;
 using Deliveries.Domain.Constants;
+using Deliveries.Domain.DTOs;
 
 namespace Deliveries.Application.Validators;
 

@@ -45,16 +45,16 @@ public class GlobalExceptionMiddleware
                 response.Details = validationEx.Errors?.Select(e => $"{e.PropertyName}: {e.ErrorMessage}").ToArray();
                 break;
 
-            case ArgumentException argEx:
-                response.StatusCode = (int)HttpStatusCode.BadRequest;
-                response.Message = "Paramètre invalide";
-                response.Details = new[] { argEx.Message };
-                break;
-
             case ArgumentNullException nullEx:
                 response.StatusCode = (int)HttpStatusCode.BadRequest;
                 response.Message = "Paramètre requis manquant";
                 response.Details = new[] { nullEx.Message };
+                break;
+
+            case ArgumentException argEx:
+                response.StatusCode = (int)HttpStatusCode.BadRequest;
+                response.Message = "Paramètre invalide";
+                response.Details = new[] { argEx.Message };
                 break;
 
             case KeyNotFoundException notFoundEx:

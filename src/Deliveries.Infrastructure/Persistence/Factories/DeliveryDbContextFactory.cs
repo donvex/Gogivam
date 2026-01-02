@@ -2,6 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.Extensions.Configuration;
 using Deliveries.Infrastructure.Persistence;
+using System.IO;
 
 namespace Deliveries.Infrastructure.Persistence.Factories;
 

@@ -81,7 +81,7 @@ public class DatabaseMigrationHealthCheck : IHealthCheck
 
             if (pendingMigrations.Any())
             {
-                return HealthCheckResult.Degraded("Database has pending migrations", data);
+                return HealthCheckResult.Degraded("Database has pending migrations", exception: null, data);
             }
 
             return HealthCheckResult.Healthy("Database migrations are up to date", data);
